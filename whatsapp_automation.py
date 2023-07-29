@@ -11,8 +11,6 @@ Contact =json.load(c)
 
 driver=webdriver.Chrome()
 
-count=0
-
 driver.get("https://web.whatsapp.com/")
 input("Press enter after login into Whatsapp web")
 share = str(input("Enter link:"))
@@ -33,9 +31,8 @@ for i in Contact:
             sleep(2)
             click_btn.click()
             sent = True
-            sleep(5)
+            sleep(3)
             print('Message sent to: ' + i["name"])
-        count = count + 1
     except Exception as e:
         print('Failed to send message to ' + i["name"])
 driver.quit()
